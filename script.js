@@ -51,3 +51,30 @@ const typed = new Typed('.multiple-text',{
     backDelay:1000,
     loop:true
 });
+
+function sendToWhatsApp() {
+            // Get form values
+            let name = document.querySelector('input[name="Name"]').value;
+            let email = document.querySelector('input[name="Email Address"]').value;
+            let mobile = document.querySelector('input[name="Mobile Number"]').value;
+            let subject = document.querySelector('input[name="Email Subject"]').value;
+            let message = document.querySelector('textarea[name="Your Message"]').value;
+
+            // Validate if all fields are filled
+            if (name && email && mobile && subject && message) {
+                // Encode the message to make it URL-safe
+                let whatsappMessage = `Name: ${name}\nEmail: ${email}\nMobile: ${mobile}\nSubject: ${subject}\nMessage: ${message}`;
+                let encodedMessage = encodeURIComponent(whatsappMessage);
+
+                // Define your WhatsApp number (include country code without "+" symbol)
+                let whatsappNumber = "+918735890374"; // Replace with your actual WhatsApp number
+
+                // Create the WhatsApp URL
+                let whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+                // Open the WhatsApp chat in a new tab
+                window.open(whatsappUrl, '_blank');
+            } else {
+                alert("Please fill out all fields.");
+            }
+}
