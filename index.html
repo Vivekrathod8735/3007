@@ -115,19 +115,19 @@
         <section class="contact"id="contact">
             <h2 class="heading">Contact<span>ME!</span></h2>
 
-            <form action="mailto:rathodvivek631@gmail.com?subject=  &body= Hii, Vivek Rathod"  method="POST">
-                <div class="input-box">
-                    <input type="text" name="Name" placeholder="Full Name">
-                    <input type="email" name="Email Address" placeholder="Email Address">
-                </div>
-                <div class="input-box">
-                    <input type="number" name="Mobile Number"placeholder="Mobile Number">
-                    <input type="text"name="Email Subject" placeholder="Email Subject">
-                </div>
-              <textarea name="Your Message" id="" cols="30" rows="10"placeholder="Your Message"></textarea>
-             <input type="submit" value="Send Message"class="btn">
-            </form>
-            <span id="msg"></span>
+<form name="submit-to-google-sheet" onsubmit="sendToWhatsApp(); return false;">
+        <div class="input-box">
+            <input type="text" name="Name" placeholder="Full Name">
+            <input type="email" name="Email Address" placeholder="Email Address">
+        </div>
+        <div class="input-box">
+            <input type="number" name="Mobile Number" placeholder="Mobile Number">
+            <input type="text" name="Email Subject" placeholder="Email Subject">
+        </div>
+        <textarea name="Your Message" cols="30" rows="10" placeholder="Your Message"></textarea>
+        <input type="submit" class="btn" value="Send WhatsApp">
+    </form>
+          
         </section>
 
         <footer class="footer">
