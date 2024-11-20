@@ -51,30 +51,20 @@ const typed = new Typed('.multiple-text',{
     backDelay:1000,
     loop:true
 });
-
 function sendToWhatsApp() {
-            // Get form values
-            let name = document.querySelector('input[name="Name"]').value;
-            let email = document.querySelector('input[name="Email Address"]').value;
-            let mobile = document.querySelector('input[name="Mobile Number"]').value;
-            let subject = document.querySelector('input[name="Email Subject"]').value;
-            let message = document.querySelector('textarea[name="Your Message"]').value;
+            // Collect form data
+            const name = document.querySelector('input[name="Name"]').value;
+            const email = document.querySelector('input[name="Email Address"]').value;
+            const mobile = document.querySelector('input[name="Mobile Number"]').value;
+            const subject = document.querySelector('input[name="Subject"]').value;
+            const message = document.querySelector('textarea[name="Your Message"]').value;
 
-            // Validate if all fields are filled
-            if (name && email && mobile && subject && message) {
-                // Encode the message to make it URL-safe
-                let whatsappMessage = `Name: ${name}\nEmail: ${email}\nMobile: ${mobile}\nSubject: ${subject}\nMessage: ${message}`;
-                let encodedMessage = encodeURIComponent(whatsappMessage);
+            // Format the WhatsApp message
+            const whatsappMessage = `Hello,%0A%0AName: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0AMobile: ${encodeURIComponent(mobile)}%0ASubject: ${encodeURIComponent(subject)}%0AMessage: ${encodeURIComponent(message)}`;
 
-                // Define your WhatsApp number (include country code without "+" symbol)
-                let whatsappNumber = "+918735890374"; // Replace with your actual WhatsApp number
+            // WhatsApp URL (replace <PHONE_NUMBER> with your WhatsApp number)
+            const whatsappURL = `https://wa.me/+918735890374?text=${whatsappMessage}`;
 
-                // Create the WhatsApp URL
-                let whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-
-                // Open the WhatsApp chat in a new tab
-                window.open(whatsappUrl, '_blank');
-            } else {
-                alert("Please fill out all fields.");
-            }
+            // Open WhatsApp URL
+            window.open(whatsappURL, '_blank');
 }
