@@ -114,19 +114,18 @@
         </section>
         <section class="contact"id="contact">
             <h2 class="heading">Contact<span>ME!</span></h2>
-
 <form name="submit-to-google-sheet" onsubmit="sendToWhatsApp(); return false;">
         <div class="input-box">
-            <input type="text" name="Name" placeholder="Full Name">
-            <input type="email" name="Email Address" placeholder="Email Address">
+            <input type="text" name="Name" placeholder="Full Name" required>
+            <input type="email" name="Email Address" placeholder="Email Address" required>
         </div>
         <div class="input-box">
-            <input type="number" name="Mobile Number" placeholder="Mobile Number">
-            <input type="text" name="Subject" placeholder="Subject">
+            <input type="number" name="Mobile Number" placeholder="Mobile Number" required>
+            <input type="text" name="Subject" placeholder="Subject" required>
         </div>
-        <textarea name="Your Message" cols="30" rows="10" placeholder="Your Message"></textarea>
+        <textarea name="Your Message" cols="30" rows="10" placeholder="Your Message" required></textarea>
         <input type="submit" class="btn" value="Send WhatsApp">
-    </form>
+</form>
           
         </section>
 
